@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Jane Massoterapeuta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1 class="logo cursiva">Jane Massoterapeuta</h1>
+        </header>
+
+        <!-- Seção de Login -->
+        <section id="login" class="content">
+            <div class="login-box">
+                <h2>Login</h2>
+                <form id="loginForm" novalidate>
+                    <!-- Campo de Nome -->
+                    <div class="input-group">
+                        <label for="nomeLogin">Nome:</label>
+                        <input type="text" id="nomeLogin" name="nomeLogin" required>
+                    </div>
+                    <!-- Campo de Email -->
+                    <div class="input-group">
+                        <label for="emailLogin">Email:</label>
+                        <input type="email" id="emailLogin" name="emailLogin" required>
+                    </div>
+                    <!-- Campo de Senha -->
+                    <div class="input-group">
+                        <label for="senhaLogin">Senha:</label>
+                        <input type="password" id="senhaLogin" name="senhaLogin" required>
+                    </div>
+                    <!-- Botão de Login -->
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+                <!-- Link para Registro -->
+                <p class="register-link">Não possui uma conta? <a href="register.html">Registrar-se</a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Script para Login -->
+    <script>
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [
+            { nome: 'Jane Doe', email: 'moralesbalsamo@gmail.com', senha: 'winchester123', tipo: 'admin' },
+            { nome: 'Usuário Teste', email: 'usuario@dominio.com', senha: 'usuario123', tipo: 'comum' }
+        ];
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nomeLogin').value.trim().toLowerCase();
+            const email = document.getElementById('emailLogin').value.trim().toLowerCase();
+            const senha = document.getElementById('senhaLogin').value;
+
+            if (nome && email && senha) {
+                const usuario = usuarios.find(u => 
+                    u.email.toLowerCase() === email && 
+                    u.senha === senha && 
+                    u.nome.toLowerCase() === nome
+                );
+
+                if (usuario) {
+                    localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+                    window.location.href = 'main.html'; // Redireciona para a página principal
+                } else {
+                    alert('Email, nome ou senha incorretos.');
+                }
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal - Jane Massoterapeuta</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 36px; /* Tamanho maior para o logo */
+            font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto */
+            font-weight: 700; /* Peso mais forte para destacar o logo */
+            color: white;
+            letter-spacing: 2px; /* Aumenta o espaçamento entre as letras */
+            text-transform: uppercase; /* Transforma as letras em maiúsculas */
+        }
+
+        #navMenu {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #navMenu a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        #socialIcons {
+            display: flex;
+            gap: 15px;
+        }
+
+        #socialIcons a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        #socialIcons a:hover {
+            color: #f4f4f9;
+        }
+
+        #welcomeUser {
+            color: white;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            padding: 40px 0;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            flex-direction: column;
+            gap: 30px; /* Espaço entre as seções */
+        }
+
+        .section {
+            background-color: white;
+            border: 1px solid #ddd; /* Borda ao redor das seções */
+            padding: 20px; /* Espaçamento interno */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Bordas arredondadas */
+        }
+
+        footer {
+            background-color: #4A90E2;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Jane Massoterapeuta</h1>
+            <nav id="navMenu">
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#agendar">Agendar</a>
+                <a href="#" id="logoutLink">Sair</a>
+                <span id="welcomeUser"></span>
+            </nav>
+            <div id="socialIcons">
+                <a href="https://www.facebook.com/jane.morales.7564" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.instagram.com/jane.morales.7564/" target="_blank" class="fab fa-instagram"></a>
+                <a href="https://wa.me/555399360281" target="_blank" class="fab fa-whatsapp"></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Sobre -->
+        <section id="sobre" class="section">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>Oferecemos massagens terapêuticas para relaxamento e bem-estar, com profissionais especializados para proporcionar a melhor experiência de alívio e recuperação para o seu corpo e mente.</p>
+            </div>
+        </section>
+
+        <!-- Seção Serviços -->
+        <section id="servicos" class="section">
+            <div class="container">
+                <h2>Serviços</h2>
+                <div class="servicos-lista">
+                    <div class="servico-item">
+                        <h3>Massagem Relaxante</h3>
+                        <p>Relaxamento profundo para aliviar o estresse e a tensão muscular.</p>
+                    </div>
+                    <div class="servico-item">
+                        <h3>Massagem Terapêutica</h3>
+                        <p>Tratamento específico para dores musculares e lesões.</p>
+                    </div>
+                    <div class="servico-item">
+                        <h3>Reflexologia</h3>
+                        <p>Estimula pontos reflexos nos pés para melhorar a saúde geral.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Agendar -->
+        <section id="agendar" class="section">
+            <div class="container">
+                <h2>Agende Seu Atendimento</h2>
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="data">Escolha a Data</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Escolha o Horário</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo">Selecione o Tipo de Serviço</label>
+                        <select id="tipo" name="tipo">
+                            <option value="relaxante">Massagem Relaxante</option>
+                            <option value="terapeutica">Massagem Terapêutica</option>
+                            <option value="reflexologia">Reflexologia</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Agendar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jane Massoterapeuta. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('logoutLink').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+    </script>
+
+    <!-- Coloque este script abaixo do script existente no final do body -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obtenção dos valores do formulário
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+            const tipo = document.getElementById('tipo').value;
+
+            // Mensagem formatada para envio no WhatsApp
+            const mensagem = `Olá, Jane! Gostaria de agendar uma sessão.\n\n🗓 Data: ${data}\n🕒 Hora: ${hora}\n💆 Tipo de Serviço: ${tipo}`;
+
+            // Número de telefone do WhatsApp com código de país e DDD
+            const numeroWhatsApp = '555399360281';
+
+            // URL para redirecionar para o WhatsApp com a mensagem
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+            // Redireciona o usuário para o WhatsApp com a mensagem preenchida
+            window.open(urlWhatsApp, '_blank');
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Ajuste de estilo para uma tela de login e registro elegante */
+
+/* Corpo e fundo */
+body {
+    background: linear-gradient(to right, #4A90E2, #5A6CE0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Container centralizado */
+.container {
+    width: 100%;
+    max-width: 380px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho */
+.header .logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Subtítulo do cabeçalho */
+.header .subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Caixa de login/registro */
+.login-box, .register-box {
+    background-color: rgba(253, 252, 252, 0.95);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    text-align: center;
+}
+
+/* Título de login/registro */
+.login-box h2, .register-box h2 {
+    color: #4A90E2;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Estilo dos campos de entrada */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 1em;
+    color: #4A90E2;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #4A90E2;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+/* Botão de login/registro */
+button.btn {
+    background-color: #4A90E2;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button.btn:hover {
+    background-color: #357ABD;
+}
+
+/* Link para registro/login */
+.register-link {
+    margin-top: 15px;
+    color: #5a5959;
+    font-size: 0.9em;
+}
+
+.register-link a {
+    color: #357ABD;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica a animação nas caixas de login e registro */
+.login-box, .register-box {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Estilo para os campos de entrada na seção Agendar */
+#agendar .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#agendar .form-group label {
+    font-size: 1.1em;
+    color: #4A90E2;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+#agendar input[type="date"],
+#agendar input[type="time"],
+#agendar select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 8px;
+    background-color: #f7f7f7;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+#agendar input[type="date"]:focus,
+#agendar input[type="time"]:focus,
+#agendar select:focus {
+    border-color: #4A90E2;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Estilo para o botão de Agendar */
+#agendar button.btn {
+    background-color: #4A90E2;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+#agendar button.btn:hover {
+    background-color: #357ABD;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #007bff;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo do logo com fonte cursiva */
+header .logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fcfafa;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    margin-left: 20px;
+    font-family: 'Dancing Script', cursive; /* Aplicando a fonte cursiva */
+}
+
+#navMenu {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+#navMenu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#navMenu a:hover {
+    background-color: #0056b3;
+}
+
+/* Ajuste do welcomeUser */
+#welcomeUser {
+    color: white;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/* Tamanho do cabeçalho e espaçamento */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 40px 0;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Seções principais */
+.section {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #4A90E2;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Melhorias nos botões */
+button.btn {
+    background-color: #4A90E2;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button.btn:hover {
+    background-color: #357ABD;
+}
+/* Estilo do logo com fonte cursiva e borboleta */
+header .logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fcfafa;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    margin-left: 20px;
+    font-family: 'Dancing Script', cursive; /* Aplicando a fonte cursiva */
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+
+

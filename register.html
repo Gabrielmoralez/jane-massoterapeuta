@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar - Jane Massoterapeuta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container Principal -->
+    <div class="container">
+        <header class="header">
+            <h1 class="logo cursiva">Jane Massoterapeuta</h1>
+        </header>
+
+        <!-- Caixa de Registro -->
+        <section id="register">
+            <div class="login-box">
+                <h2>Registrar</h2>
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="nomeRegister">Nome:</label>
+                        <input type="text" id="nomeRegister" name="nomeRegister" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="emailRegister">Email:</label>
+                        <input type="email" id="emailRegister" name="emailRegister" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="senhaRegister">Senha:</label>
+                        <input type="password" id="senhaRegister" name="senhaRegister" required>
+                    </div>
+
+                    <button type="submit" class="btn">Registrar</button>
+                </form>
+
+                <div class="register-link">
+                    <p>Já possui uma conta? <a href="login.html">Fazer Login</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Recuperando os valores dos campos
+            const nome = document.getElementById('nomeRegister').value.trim();
+            const email = document.getElementById('emailRegister').value.trim();
+            const senha = document.getElementById('senhaRegister').value.trim();
+
+            // Verificando se todos os campos foram preenchidos
+            if (nome && email && senha) {
+                // Adicionando o novo usuário com o nome
+                usuarios.push({ nome, email, senha, tipo: 'comum' });
+
+                // Armazenando os usuários no localStorage
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+                alert('Registro bem-sucedido! Faça login.');
+                window.location.href = 'login.html';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+</body>
+</html>
